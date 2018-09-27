@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './home.dart';
-
-import './navWithotTabs.dart';
-
+// import './homeWithNavBar.dart';
 // import './navBar.dart';
 
 void main() => runApp(
@@ -12,7 +10,6 @@ void main() => runApp(
         title: 'Az_Zawj',
         theme: ThemeData(
           primaryColor: Colors.pink,
-          // canvasColor: Colors.purple,
         ),
       ),
     );
