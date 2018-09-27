@@ -45,7 +45,7 @@ class _HomeWithNavBar extends State<HomeWithNavBar> {
       ),
       body: _children[_currentIndex],
       bottomNavigationBar: Padding(
-        padding: EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(12.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           mainAxisSize: MainAxisSize.min,
