@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
+/* what is typedef? why is it used? What is it doing here */
+typedef NavHandler(int currentIndex);
+
 class NavBar extends StatefulWidget {
   final int currentIndex;
+  final NavHandler navHandler;
 
-  NavBar({@required this.currentIndex});
+  NavBar({@required this.currentIndex, @required this.navHandler});
 
   @override
   State<StatefulWidget> createState() {
-    return _NavBar();
+    return _NavBarState();
   }
 }
 
-class _NavBar extends State<NavBar> {
+class _NavBarState extends State<NavBar> {
   int _currentIndex;
 
   Color _activeIcon = Colors.purple;
@@ -33,7 +37,6 @@ class _NavBar extends State<NavBar> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Padding(
       padding: EdgeInsets.all(10.0),
       child: Row(
@@ -46,6 +49,7 @@ class _NavBar extends State<NavBar> {
               color: _searchIconColor,
             ),
             onTap: () {
+              widget.navHandler(0); /* Why is this ? */
               setState(() {
                 _currentIndex = 0;
                 _manageIconColor(_currentIndex);
@@ -58,6 +62,7 @@ class _NavBar extends State<NavBar> {
               color: _messagesIconColor,
             ),
             onTap: () {
+              widget.navHandler(1);
               setState(() {
                 _currentIndex = 1;
                 _manageIconColor(_currentIndex);
@@ -70,6 +75,7 @@ class _NavBar extends State<NavBar> {
               color: _addNewIconColor,
             ),
             onTap: () {
+              widget.navHandler(2);
               setState(() {
                 _currentIndex = 2;
                 _manageIconColor(_currentIndex);
@@ -82,6 +88,7 @@ class _NavBar extends State<NavBar> {
               color: _notifyIconColor,
             ),
             onTap: () {
+              widget.navHandler(3);
               setState(() {
                 _currentIndex = 3;
                 _manageIconColor(_currentIndex);
@@ -94,6 +101,7 @@ class _NavBar extends State<NavBar> {
               color: _accountIconColor,
             ),
             onTap: () {
+              widget.navHandler(4);
               setState(() {
                 _currentIndex = 4;
                 _manageIconColor(_currentIndex);

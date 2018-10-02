@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 
 import './navBar.dart';
 
-class Home extends StatelessWidget {
-  final int _currentIndex = 0;
+class Home extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _HomeState();
+  }
+}
+
+class _HomeState extends State<Home> {
+  int _currentIndex = 0;
   final List _children = [
     PlaceHolderWidget(Colors.black),
     PlaceHolderWidget(Colors.blue),
@@ -14,7 +21,6 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: AppBar(
         title: Center(
@@ -24,8 +30,15 @@ class Home extends StatelessWidget {
       body: _children[_currentIndex],
       bottomNavigationBar: NavBar(
         currentIndex: _currentIndex,
+        navHandler: (index) => _changeIndex(index),
       ),
     );
+  }
+
+  _changeIndex(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
   }
 }
 
