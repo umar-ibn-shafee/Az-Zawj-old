@@ -6,6 +6,7 @@ import './home.dart';
 
 void main() => runApp(
       MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Home(),
         title: 'Az_Zawj',
         theme: ThemeData(
@@ -14,3 +15,4 @@ void main() => runApp(
       ),
     );
 
+//export PATH=/home/mercyofallah/Umar/development/flutter/bin:$PATH
