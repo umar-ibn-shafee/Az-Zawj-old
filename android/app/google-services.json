@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "834991134715",
+    "firebase_url": "https://az-zawj.firebaseio.com",
+    "project_id": "az-zawj",
+    "storage_bucket": "az-zawj.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834991134715:android:b0a65ef3f98feb41",
+        "android_client_info": {
+          "package_name": "com.example.azzawj"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "834991134715-oj6odf43umen2vqe6134rvmdumvfa9vh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsL_dSH_rrnurYXkirfIqBHxSvoG7KFD0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

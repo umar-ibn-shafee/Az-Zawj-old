@@ -1,6 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
+// import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Post {
   final String icon;
   final String text;
@@ -160,12 +164,19 @@ Future fetchResponse() async {
 
   await Future.delayed(Duration(seconds: 2));
   // final futureData = await Future.value(newData);
-  // return response;
-  // return newData;
   return response;
 }
 
 class ZawjNotification extends StatelessWidget {
+  final DatabaseReference database =
+      FirebaseDatabase.instance.reference().child('firstPath');
+
+  final docRef = firebase;
+
+  setData(data) {
+    database.push().set(data);
+  }
+
   final finalData = fetchResponse();
 
   @override
@@ -215,11 +226,14 @@ class ZawjNotification extends StatelessWidget {
                 right: 20.0,
               ),
               dense: true,
-              trailing: Image(
-                image: AssetImage(data[index]['icon']),
-                fit: BoxFit.cover,
-                height: 40.0,
-                width: 40.0,
+              trailing: IconButton(
+                icon: Image(
+                  image: AssetImage(data[index]['icon']),
+                  fit: BoxFit.cover,
+                  height: 40.0,
+                  width: 40.0,
+                ),
+                onPressed: () => setData(data[index]),
               ),
               subtitle: Text('6d'),
             ),
